@@ -1,0 +1,7 @@
+curl -XPUT
+127.0.0.1:9200/movies/movie/109487 -d '
+{
+"genre" : ["IMAX","Sci-Fi"],
+"title" : "Interstellar",
+"year" : 2014
+}'

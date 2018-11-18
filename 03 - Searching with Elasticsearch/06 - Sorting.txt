@@ -1,0 +1,22 @@
+curl -XGET '127.0.0.1:9200/movies/movie/_search?sort=year&pretty'
+
+curl -XPUT 127.0.0.1:9200/movies/ -d '
+{
+"mappings": {
+"movie": {
+"properties" : {
+"title": {
+"type" : “text",
+"fields": {
+"raw": {
+"type": “keyword",
+}
+}
+}
+}
+}
+}
+}'
+
+
+curl -XGET '127.0.0.1:9200/movies/movie/_search?sort=title.raw&pretty'

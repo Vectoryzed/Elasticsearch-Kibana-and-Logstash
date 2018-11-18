@@ -1,0 +1,17 @@
+curl -XGET '127.0.0.1:9200/movies/movie/_search?pretty' -d '
+{
+"query": {
+"prefix": {
+"year": "201"
+}
+}
+}
+
+curl -XGET '127.0.0.1:9200/movies/movie/_search?pretty' -d '
+{
+"query": {
+"wildcard": {
+"year": "1*"
+}
+}
+}'

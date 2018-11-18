@@ -1,0 +1,47 @@
+curl -XGET '127.0.0.1:9200/logstash2015.12.04/_search?size=0&pretty'
+-d ‘
+{
+"aggs" : {
+"timestamp": {
+"date_histogram": {
+"field": "@timestamp",
+"interval": "hour"
+}
+}
+}
+}'
+
+curl -XGET '127.0.0.1:9200/logstash2015.12.04/_search?size=0&pretty'
+-d ‘
+{
+"query" : {
+"match": {
+"agent": "Googlebot"
+}
+},
+"aggs" : {
+“timestamp": {
+"date_histogram": {
+"field": "@timestamp",
+"interval": "hour"
+}
+}
+}
+}'
+
+GET /logstash-2015.12.04/_search?size=0&pretty
+{
+"query" : {
+"match": {
+"response": "500"
+}
+},
+"aggs" : {
+"timestamp": {
+"date_histogram": {
+"field": "@timestamp",
+"interval": "minute"
+}
+}
+}
+}

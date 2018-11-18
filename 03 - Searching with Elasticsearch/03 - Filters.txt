@@ -1,0 +1,21 @@
+curl -XGET 127.0.0.1:9200/movies/movie/_search?pretty -d'
+{
+"query":{
+"bool": {
+"must": {"term": {"title": "trek"}},
+"filter": {"range": {"year": {"gte": 2010}}}
+}
+}
+}'
+
+
+
+curl -XGET 127.0.0.1:9200/movies/movie/_search?pretty -d'
+{
+"query":{
+"bool": {
+"must": {"term": {"title": "trek"}},
+"filter": {"range": {"year": {"gte": 2010}}}
+}
+}
+}'

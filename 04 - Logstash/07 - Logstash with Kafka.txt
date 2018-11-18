@@ -1,0 +1,6 @@
+input {
+kafka {
+bootstrap_servers => "localhost:9092"
+topics => ["kafka-logs"]
+}
+}

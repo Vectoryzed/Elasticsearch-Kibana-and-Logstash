@@ -1,0 +1,6 @@
+curl -XPOST 127.0.0.1:9200/movies/movie/109487/_update -d '
+{
+"doc": {
+"title": "Interstellar"
+}
+}

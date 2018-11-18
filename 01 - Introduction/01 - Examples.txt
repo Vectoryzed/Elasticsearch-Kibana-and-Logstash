@@ -1,0 +1,17 @@
+curl -H ‘Content-Type: application/json” -XGET
+'127.0.0.1:9200/shakespeare/_search?pretty' -d '
+{
+"query" : {
+"match_phrase" : {
+"text_entry" : "to be or not to be"
+}
+}
+}
+'
+curl -H ‘Content-Type: application/json” -XPUT
+127.0.0.1:9200/movies/movie/109487 –d ‘
+{
+"genre" : ["IMAX","Sci-Fi"],
+"title" : "Interstellar",
+"year" : 2014
+}

@@ -1,0 +1,7 @@
+input {
+s3 {
+bucket => "sundog-es"
+access_key_id => "AKIAIS****C26Y***Q"
+secret_access_key => "d*****FENOXcCuNC4iTbSLbibA*****eyn****"
+}
+}
