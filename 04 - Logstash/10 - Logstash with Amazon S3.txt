@@ -1,0 +1,14 @@
+input {
+file {
+path => "/home/fkane/access_log-2"
+}
+}
+output {
+amazon_es {
+hosts => ["search-test-logstash-tdjkXXXXXXdtp3o3hcy.us-east1.es.amazonaws.com"]
+region => "us-east-1"
+aws_access_key_id => 'AKIXXXXXXK7XYQQ'
+aws_secret_access_key =>
+'7rvZyxmUudcXXXXXXXXXgTunpuSyw2HGuF'
+index => "production-logs-%{+YYYY.MM.dd}"
+}
